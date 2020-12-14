@@ -20,6 +20,8 @@ export async function getStaticPaths() {
 
 // This function gets called at build time
 export async function getStaticProps({ params }) {
+	// params contains the robot `id`.
+	// If the route is like /robots/1, then params.id is 1
 	const res = await fetch(
 		`http://jsonplaceholder.typicode.com/users/${params.id}`,
 	);

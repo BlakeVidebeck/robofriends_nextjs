@@ -6,7 +6,6 @@ export async function getStaticProps() {
 	// getStaticProps only runs on the server side
 	const res = await fetch('http://jsonplaceholder.typicode.com/users');
 	const robots = await res.json();
-
 	return {
 		props: {
 			robots, // will be passed to the Robots component as props
@@ -22,6 +21,7 @@ const Robots = ({ robots }) => {
 			</Head>
 			<div className='tc'>
 				{robots.map(robot => (
+					// Card component
 					<div
 						key={robot.id}
 						className='tc bg-light-green dib br3 pa3 ma2 bw2 shadow-5'
